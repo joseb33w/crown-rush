@@ -1,6 +1,7 @@
 node_modules/
 dist/
 verify/
+package-lock.json
 *.log
 .DS_Store
 .vite/
