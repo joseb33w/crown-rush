@@ -44,12 +44,12 @@ canvas.addEventListener('contextmenu', (e) => e.preventDefault());
 
 let last = performance.now();
 function frame(now) {
+  requestAnimationFrame(frame); // reschedule first so a bad frame never freezes the loop
   let dt = (now - last) / 1000;
   last = now;
   if (dt > 0.05) dt = 0.05; // clamp big stalls
   game.update(dt);
   game.render();
-  requestAnimationFrame(frame);
 }
 requestAnimationFrame(frame);
 

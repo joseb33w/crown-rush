@@ -171,6 +171,7 @@ export class UI {
   drawCard(ctx, r, id, time) {
     const g = this.game;
     const c = CARDS[id];
+    if (!c) return; // no hand yet (title screen)
     const affordable = g.elixir.player >= c.cost;
     const selected = g.selectedSlot === r.i;
     const lift = selected ? 6 : 0;
